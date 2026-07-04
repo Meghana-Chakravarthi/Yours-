@@ -360,6 +360,83 @@ button,
     box-shadow:0 24px 52px rgba(56,189,248,.24);
 }
 
+.hero-right::after{
+    content:'📱';
+    position:absolute;
+    width:86px;
+    height:110px;
+    top:12%;
+    right:-36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2.2rem;
+    color:rgba(255,255,255,.9);
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:28px;
+    backdrop-filter:blur(14px);
+    box-shadow:0 30px 70px rgba(15,23,42,.18);
+    animation: float-phone 8s ease-in-out infinite;
+    z-index:1;
+}
+
+.reveal-item{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .75s ease, transform .75s ease;
+}
+
+.reveal-item.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+button:not(.nav-btn){
+    position:relative;
+    overflow:hidden;
+}
+
+button .ripple-effect{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.35);
+    transform:scale(0);
+    animation:ripple 0.7s ease-out;
+    pointer-events:none;
+}
+
+#cursor-glow{
+    position:fixed;
+    top:0;
+    left:0;
+    width:120px;
+    height:120px;
+    pointer-events:none;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(99,102,241,.28) 0%, rgba(99,102,241,0) 60%);
+    transform:translate(-50%, -50%) scale(.7);
+    transition:transform .15s ease-out, opacity .25s ease-out;
+    opacity:0;
+    z-index:999;
+}
+
+@keyframes float-phone {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-6px, 10px);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(3);
+        opacity:0;
+    }
+}
+
 
 .trust-strip,
 .stories,

@@ -1,21 +1,91 @@
 document.addEventListener('DOMContentLoaded', () => {
     const trustCards = document.querySelectorAll('.trust-card');
+    const revealItems = document.querySelectorAll('.reveal-item');
+    const counters = document.querySelectorAll('.counter');
+    const cursorGlow = document.getElementById('cursor-glow');
 
-    if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            root: null,
-            threshold: 0.15,
+    const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
         });
+    }, {
+        root: null,
+        threshold: 0.18,
+    }) : null;
 
-        trustCards.forEach(card => observer.observe(card));
+    revealItems.forEach(item => {
+        if (revealObserver) {
+            revealObserver.observe(item);
+        } else {
+            item.classList.add('visible');
+        }
+    });
+
+    if (revealObserver) {
+        trustCards.forEach(card => revealObserver.observe(card));
     } else {
         trustCards.forEach(card => card.classList.add('visible'));
     }
+
+    counters.forEach(counter => {
+        const valueText = counter.textContent.match(/\d+/);
+        if (!valueText) return;
+        const target = parseInt(valueText[0], 10);
+        counter.textContent = '0' + counter.textContent.replace(valueText[0], '');
+        let current = 0;
+        const increment = Math.max(1, Math.floor(target / 30));
+
+        const updateCount = () => {
+            current += increment;
+            if (current >= target) {
+                counter.textContent = counter.textContent.replace(/^0+/, '') .replace('0', target);
+            } else {
+                counter.textContent = counter.textContent.replace(/^0+/, '') .replace('0', current);
+                requestAnimationFrame(updateCount);
+            }
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCount();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        counterObserver.observe(counter);
+    });
+
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', event => {
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple-effect';
+            const rect = button.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${event.clientX - rect.left - size / 2}px`;
+            ripple.style.top = `${event.clientY - rect.top - size / 2}px`;
+            button.appendChild(ripple);
+            ripple.addEventListener('animationend', () => ripple.remove());
+        });
+    });
+
+    window.addEventListener('mousemove', event => {
+        if (!cursorGlow) return;
+        cursorGlow.style.opacity = '1';
+        cursorGlow.style.left = `${event.clientX}px`;
+        cursorGlow.style.top = `${event.clientY}px`;
+        cursorGlow.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+
+    window.addEventListener('mouseout', () => {
+        if (!cursorGlow) return;
+        cursorGlow.style.opacity = '0';
+    });
+
+    document.documentElement.style.scrollBehavior = 'smooth';
 });
