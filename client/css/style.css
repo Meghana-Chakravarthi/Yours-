@@ -4,7 +4,7 @@
     box-sizing:border-box;
 }
 body{
-    font-family:'Poppins',sans-serif;
+    font-family:"Playfair Display", serif;
     background:#0F172A;
     color:white;
 }
@@ -16,7 +16,11 @@ body{
 }
 .logo{
     font-size:2rem;
+    font-family: "Playfair Display", serif;
     font-weight:700;
+    /* display:flex;
+    justify-content:center; */
+    text-align:center;
     color:#6366F1;
 }
 .nav-links{
