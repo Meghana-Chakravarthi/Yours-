@@ -1,0 +1,145 @@
+/* ===========================
+   RESET
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   VARIABLES
+=========================== */
+
+:root {
+    --primary: #6366F1;
+    --background: #0F172A;
+    --card: rgba(30, 41, 59, 0.65);
+    --text: #F8FAFC;
+    --secondary: #94A3B8;
+    --border: rgba(255,255,255,0.08);
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text);
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    position:relative;
+}
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.background{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+
+.circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    animation:float 12s ease-in-out infinite;
+
+}
+
+.circle1{
+
+    width:320px;
+    height:320px;
+
+    background:#6366F1;
+
+    top:-80px;
+    left:-80px;
+
+}
+
+.circle2{
+
+    width:250px;
+    height:250px;
+
+    background:#8B5CF6;
+
+    bottom:-60px;
+    right:-50px;
+
+    animation-delay:3s;
+
+}
+
+.circle3{
+
+    width:180px;
+    height:180px;
+
+    background:#06B6D4;
+
+    top:45%;
+    left:60%;
+
+    animation-delay:6s;
+}
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-40px);
+    }
+}
+.container{
+    position:relative;
+    z-index:10;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+.login-card{
+    width:420px;
+    background:var(--card);
+    backdrop-filter:blur(25px);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:45px;
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+}
+.logo{
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:25px;
+}
+.logo span{
+    color:var(--primary);
+}
+.login-card h1{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+.subtitle{
+    color:var(--secondary);
+    margin-bottom:35px;
+}
