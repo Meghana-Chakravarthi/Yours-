@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat | Yours?</title>
+    <link rel="stylesheet" href="../css/chat.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div>
+            <div class="logo">yours<span>?</span></div>
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="lost.html">Report Lost</a>
+                <a href="found.html">Report Found</a>
+                <a href="matches.html">Matches</a>
+                <a href="#" class="active">Community</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="chat-shell">
+        <section class="conversations-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Messages</p>
+                    <h2>Contacts</h2>
+                </div>
+                <button class="panel-btn">+</button>
+            </div>
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="text" placeholder="Search chats" />
+            </div>
+
+            <div class="conversation-list">
+                <button class="conversation-item active" data-contact="rahul" type="button">
+                    <div class="avatar avatar-rahul"></div>
+                    <div class="conversation-meta">
+                        <strong>Rahul</strong>
+                        <p>Is the earbuds case still with you?</p>
+                    </div>
+                    <div class="meta-right">
+                        <span class="time">2m</span>
+                        <span class="unread">2</span>
+                    </div>
+                </button>
+
+                <button class="conversation-item" data-contact="priya" type="button">
+                    <div class="avatar avatar-priya"></div>
+                    <div class="conversation-meta">
+                        <strong>Priya</strong>
+                        <p>Let’s meet at the campus gate.</p>
+                    </div>
+                    <div class="meta-right">
+                        <span class="time">12m</span>
+                    </div>
+                </button>
+
+                <button class="conversation-item" data-contact="akhil" type="button">
+                    <div class="avatar avatar-akhil"></div>
+                    <div class="conversation-meta">
+                        <strong>Akhil</strong>
+                        <p>Perfect, I’ll bring the bag.</p>
+                    </div>
+                    <div class="meta-right">
+                        <span class="time">1h</span>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <section class="chat-panel">
+            <header class="topbar">
+                <div class="chat-user">
+                    <div class="avatar avatar-rahul"></div>
+                    <div>
+                        <h3 id="chatName">Rahul</h3>
+                        <p id="chatStatus"><span class="status-dot online"></span>Online • replying now</p>
+                    </div>
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-btn">☎</button>
+                    <button class="icon-btn">⋯</button>
+                </div>
+            </header>
+
+            <div class="messages" id="messages">
+                <div class="system-banner">Secure meetup chat • Verified community members only</div>
+                <div id="typingIndicator" class="typing" style="display:none;">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <button class="quick-btn" data-action="meeting">Suggest Meeting</button>
+                <button class="quick-btn" data-action="photo">Share Item Photo</button>
+                <button class="quick-btn" data-action="qr">Generate QR</button>
+                <button class="quick-btn" data-action="match">View Match Details</button>
+            </div>
+
+            <div class="composer">
+                <button class="icon-btn">😊</button>
+                <button class="icon-btn">📎</button>
+                <input id="messageInput" type="text" placeholder="Type a message" />
+                <button id="sendButton" class="send-btn">Send</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/chat.js"></script>
+</body>
+</html>
