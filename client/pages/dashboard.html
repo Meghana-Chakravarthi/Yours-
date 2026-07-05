@@ -23,206 +23,190 @@
 
     <aside class="sidebar">
 
-        <div class="logo">
+        <div>
+            <div class="logo">
+                yours<span>?</span>
+            </div>
 
-            yours<span>?</span>
-
+            <nav>
+                <a href="#" class="active">Home</a>
+                <a href="#">Lost Items</a>
+                <a href="#">Found Items</a>
+                <a href="#">Matches</a>
+                <a href="#">Community</a>
+                <a href="#">Profile</a>
+                <a href="#">Logout</a>
+            </nav>
         </div>
-
-        <nav>
-
-            <a href="#" class="active">🏠 Home</a>
-
-            <a href="#">🔍 Lost Items</a>
-
-            <a href="#">🤝 Found Items</a>
-
-            <a href="#">❤️ Matches</a>
-
-            <a href="#">💬 Messages</a>
-
-            <a href="#">👤 Profile</a>
-
-            <a href="#">⚙ Settings</a>
-
-            <a href="#">🚪 Logout</a>
-
-        </nav>
 
     </aside>
 
-
-
-    <!-- ================= MAIN ================= -->
-
     <main class="main-content">
 
-        <!-- Header -->
+        <header class="topbar">
+            <div class="greeting-block">
+                <p class="eyebrow">Dashboard</p>
+                <h1 id="greetingText">Good Afternoon, Meghana</h1>
+                <p class="subtext">Ready to reconnect with what matters?</p>
+            </div>
 
-<header class="topbar">
+            <div class="topbar-actions">
+                <label class="search-box" aria-label="Search activity">
+                    <input id="activitySearch" type="text" placeholder="Search activity" />
+                </label>
 
-    <div class="welcome">
+                <button class="notification" aria-label="Notifications">
+                    <span>3</span>
+                </button>
 
-        <h1>Good Afternoon, Meghana 👋</h1>
-
-        <p>Ready to reconnect with what matters?</p>
-
-    </div>
-
-    <!-- Search Box -->
-    <div class="search-box">
-
-        <input
-            type="text"
-            placeholder="🔍 Search lost items...">
-
-    </div>
-
-    <!-- Right Side -->
-    <div class="profile">
-
-        <div class="notification">
-
-            🔔
-
-            <span>2</span>
-
-        </div>
-
-        <img src="https://i.pravatar.cc/100" alt="Profile">
-
-    </div>
-
-</header>
-
-
-
-        <!-- Quick Actions -->
+                <div class="profile">
+                    <img src="https://i.pravatar.cc/100" alt="Profile">
+                </div>
+            </div>
+        </header>
 
         <section class="quick-actions">
+            <article class="action-card action-card-primary">
+                <div class="action-icon"></div>
+                <h3>Report Lost Item</h3>
+                <p>Share what went missing and let the community help.</p>
+            </article>
 
-            <div class="action-card">
-
-                <h2>🔍</h2>
-
-                <h3>I Lost Something</h3>
-
-                <p>Report a missing item.</p>
-
-            </div>
-
-            <div class="action-card">
-
-                <h2>🤝</h2>
-
-                <h3>I Found Something</h3>
-
-                <p>Help someone recover their belongings.</p>
-
-            </div>
-
+            <article class="action-card action-card-secondary">
+                <div class="action-icon"></div>
+                <h3>Report Found Item</h3>
+                <p>Help reunite someone’s belongings with the right owner.</p>
+            </article>
         </section>
-
-
-
-        <!-- Stats -->
 
         <section class="stats">
-
-            <div class="stat-card">
-
-                <h2>2</h2>
-
-                <p>Items Reported</p>
-
-            </div>
-
-            <div class="stat-card">
-
-                <h2>1</h2>
-
-                <p>Possible Matches</p>
-
-            </div>
-
-            <div class="stat-card">
-
-                <h2>5</h2>
-
-                <p>Recoveries</p>
-
-            </div>
-
-            <div class="stat-card">
-
-                <h2>120</h2>
-
-                <p>Karma</p>
-
-            </div>
-
+            <article class="stat-card">
+                <p class="stat-label">Reported</p>
+                <h2 data-target="12">0</h2>
+                <span>this month</span>
+            </article>
+            <article class="stat-card">
+                <p class="stat-label">Matches</p>
+                <h2 data-target="8">0</h2>
+                <span>active</span>
+            </article>
+            <article class="stat-card">
+                <p class="stat-label">Recoveries</p>
+                <h2 data-target="24">0</h2>
+                <span>completed</span>
+            </article>
+            <article class="stat-card">
+                <p class="stat-label">Karma</p>
+                <h2 data-target="320">0</h2>
+                <span>community score</span>
+            </article>
         </section>
 
+        <section class="content-grid">
+            <div class="left-stack">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Recent Activity</h3>
+                    </div>
 
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div>
+                                <strong>Backpack reported</strong>
+                                <p>Library • 12 mins ago</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div>
+                                <strong>Possible match found</strong>
+                                <p>AirPods • 2 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div>
+                                <strong>Recovery completed</strong>
+                                <p>Water bottle • Today</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Activity -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Community Heroes</h3>
+                    </div>
 
-        <section class="activity">
-
-            <h2>Recent Activity</h2>
-
-            <div class="activity-card">
-
-                🎒 Backpack reported near Library
-
+                    <div class="heroes-list">
+                        <div class="hero-card">
+                            <img src="https://i.pravatar.cc/80?img=12" alt="Rahul">
+                            <div>
+                                <strong>Rahul</strong>
+                                <p>520 Karma</p>
+                                <span>24 Recoveries</span>
+                            </div>
+                        </div>
+                        <div class="hero-card">
+                            <img src="https://i.pravatar.cc/80?img=32" alt="Priya">
+                            <div>
+                                <strong>Priya</strong>
+                                <p>480 Karma</p>
+                                <span>19 Recoveries</span>
+                            </div>
+                        </div>
+                        <div class="hero-card">
+                            <img src="https://i.pravatar.cc/80?img=15" alt="Akhil">
+                            <div>
+                                <strong>Akhil</strong>
+                                <p>430 Karma</p>
+                                <span>16 Recoveries</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="activity-card">
+            <div class="right-stack">
+                <div class="panel profile-card">
+                    <div class="profile-card-top">
+                        <img src="https://i.pravatar.cc/120" alt="Meghana">
+                        <div>
+                            <h3>Meghana Rao</h3>
+                            <p>Trusted helper</p>
+                        </div>
+                    </div>
+                    <div class="profile-stats">
+                        <div>
+                            <strong>320</strong>
+                            <span>Karma</span>
+                        </div>
+                        <div>
+                            <strong>24</strong>
+                            <span>Recoveries</span>
+                        </div>
+                        <div>
+                            <strong>Top</strong>
+                            <span>Badge</span>
+                        </div>
+                    </div>
+                </div>
 
-                🎧 Possible match found
-
+                <div class="panel match-card">
+                    <div class="match-image"></div>
+                    <div class="match-details">
+                        <h3>Black Laptop Sleeve</h3>
+                        <p>92% match</p>
+                        <span>Library • 2.3 km away</span>
+                        <button>View Match</button>
+                    </div>
+                </div>
             </div>
-
-            <div class="activity-card">
-
-                ❤️ Recovery completed successfully
-
-            </div>
-
         </section>
-
-
-
-        <!-- Community -->
-
-        <section class="community">
-
-            <h2>Community Heroes</h2>
-
-            <div class="hero-card">
-
-                🥇 Rahul — 520 Karma
-
-            </div>
-
-            <div class="hero-card">
-
-                🥈 Priya — 480 Karma
-
-            </div>
-
-            <div class="hero-card">
-
-                🥉 Akhil — 430 Karma
-
-            </div>
-
-        </section>
-
     </main>
 
-<script src="../js/dashboard.js"></script>
+    <script src="../js/dashboard.js"></script>
 
 </body>
-
 </html>
