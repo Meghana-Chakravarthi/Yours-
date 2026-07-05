@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | Yours?</title>
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div>
+            <div class="logo">yours<span>?</span></div>
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="lost.html">Lost Items</a>
+                <a href="found.html">Found Items</a>
+                <a href="matches.html">Matches</a>
+                <a href="chat.html">Community</a>
+                <a href="profile.html" class="active">Profile</a>
+                <a href="logout.html">Logout</a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="greeting-block">
+                <p class="eyebrow">Profile</p>
+                <h1 id="greetingText">Good Evening, Meghana</h1>
+                <p class="subtext">Your community presence and recovery history at a glance.</p>
+            </div>
+
+            <div class="topbar-actions">
+                <label class="search-box" aria-label="Search profile">
+                    <input type="text" placeholder="Search profile" />
+                </label>
+                <button class="notification" aria-label="Notifications">
+                    <span>2</span>
+                </button>
+                <div class="profile-pill">
+                    <img src="https://i.pravatar.cc/100" alt="Profile" />
+                </div>
+            </div>
+        </header>
+
+        <section class="profile-hero glass-panel">
+            <div class="profile-cover"></div>
+            <div class="profile-summary">
+                <div class="profile-photo-wrap">
+                    <img src="https://i.pravatar.cc/140" alt="Meghana Rao" />
+                    <button class="photo-edit">+</button>
+                </div>
+                <div class="profile-intro">
+                    <div class="profile-heading">
+                        <div>
+                            <p class="eyebrow">Trusted Community Member</p>
+                            <h2 id="displayName">Meghana Rao</h2>
+                        </div>
+                        <div class="hero-badges">
+                            <span>Verified</span>
+                            <span>Top Helper</span>
+                        </div>
+                    </div>
+                    <p class="profile-meta" id="displayMeta">meghana.r@campus.edu • Computer Science • Bengaluru</p>
+                    <div class="profile-actions">
+                        <button class="primary-btn" id="editProfileBtn">Edit Profile</button>
+                        <a href="logout.html" class="secondary-btn">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card glass-panel">
+                <p class="stat-label">Trust Score</p>
+                <h3 class="stat-number" data-target="96">0%</h3>
+                <span>Reliable and verified</span>
+            </article>
+            <article class="stat-card glass-panel">
+                <p class="stat-label">Karma Points</p>
+                <h3 class="stat-number" data-target="320">0</h3>
+                <span>Helped 24 people</span>
+            </article>
+            <article class="stat-card glass-panel">
+                <p class="stat-label">Items Lost</p>
+                <h3 class="stat-number" data-target="7">0</h3>
+                <span>Reported</span>
+            </article>
+            <article class="stat-card glass-panel">
+                <p class="stat-label">Items Found</p>
+                <h3 class="stat-number" data-target="11">0</h3>
+                <span>Returned safely</span>
+            </article>
+            <article class="stat-card glass-panel">
+                <p class="stat-label">Items Returned</p>
+                <h3 class="stat-number" data-target="9">0</h3>
+                <span>Recovered</span>
+            </article>
+            <article class="stat-card glass-panel">
+                <p class="stat-label">Reviews</p>
+                <h3 class="stat-number" data-target="28">0</h3>
+                <span>Positive feedback</span>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <div class="left-stack">
+                <div class="panel glass-panel">
+                    <div class="panel-header">
+                        <h3>Achievements</h3>
+                        <span>Milestones</span>
+                    </div>
+                    <div class="achievement-list">
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🏅</div>
+                            <div>
+                                <strong>Recovery Champion</strong>
+                                <p>Returned 9 items this semester.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">✨</div>
+                            <div>
+                                <strong>Fast Responder</strong>
+                                <p>Average response time under 10 mins.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🛡️</div>
+                            <div>
+                                <strong>Community Trusted</strong>
+                                <p>Maintained a 96% trust score.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel glass-panel">
+                    <div class="panel-header">
+                        <h3>Badges</h3>
+                        <span>Collected rewards</span>
+                    </div>
+                    <div class="badge-row">
+                        <span class="badge">Reliable</span>
+                        <span class="badge">Helpful</span>
+                        <span class="badge">Early Adopter</span>
+                        <span class="badge">Safety First</span>
+                        <span class="badge">Campus Hero</span>
+                    </div>
+                </div>
+
+                <div class="panel glass-panel">
+                    <div class="panel-header">
+                        <h3>Recent Activity</h3>
+                        <span>Timeline</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div>
+                                <strong>Returned a black notebook</strong>
+                                <p>Library • 20 mins ago</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div>
+                                <strong>Confirmed a match for a charger</strong>
+                                <p>Hostel block • 1 hour ago</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div>
+                                <strong>Completed review for a recovered wallet</strong>
+                                <p>Today • 3:40 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-stack">
+                <div class="panel glass-panel profile-details">
+                    <div class="panel-header">
+                        <h3>Profile Details</h3>
+                        <span>Overview</span>
+                    </div>
+                    <div class="detail-list">
+                        <div>
+                            <span>College</span>
+                            <strong id="displayCollege">IIIT Bangalore</strong>
+                        </div>
+                        <div>
+                            <span>Joined</span>
+                            <strong>January 2024</strong>
+                        </div>
+                        <div>
+                            <span>Preferred Contact</span>
+                            <strong id="displayContact">Email & WhatsApp</strong>
+                        </div>
+                        <div>
+                            <span>Verification</span>
+                            <strong>Student ID Confirmed</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel glass-panel edit-panel" id="editPanel">
+                    <div class="panel-header">
+                        <h3>Edit Profile</h3>
+                        <span>Update your info</span>
+                    </div>
+                    <form id="profileForm" class="profile-form">
+                        <label>
+                            <span>Name</span>
+                            <input type="text" id="nameInput" value="Meghana Rao" />
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" id="emailInput" value="meghana.r@campus.edu" />
+                        </label>
+                        <label>
+                            <span>College</span>
+                            <input type="text" id="collegeInput" value="IIIT Bangalore" />
+                        </label>
+                        <label>
+                            <span>Department</span>
+                            <input type="text" id="deptInput" value="Computer Science" />
+                        </label>
+                        <label>
+                            <span>Location</span>
+                            <input type="text" id="locationInput" value="Bengaluru" />
+                        </label>
+                        <label>
+                            <span>Preferred Contact</span>
+                            <input type="text" id="contactInput" value="Email & WhatsApp" />
+                        </label>
+                        <button type="submit" class="primary-btn">Save Changes</button>
+                    </form>
+                </div>
+
+                <div class="panel glass-panel">
+                    <div class="panel-header">
+                        <h3>Community Insight</h3>
+                        <span>At a glance</span>
+                    </div>
+                    <div class="insight-card">
+                        <p>You're one of the most active helpers in your campus circle.</p>
+                        <a href="matches.html">View recent matches</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>
