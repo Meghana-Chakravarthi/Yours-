@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure QR Verification | Yours?</title>
+    <link rel="stylesheet" href="../css/qr-verification.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div>
+            <div class="logo">yours<span>?</span></div>
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="lost.html">Lost Items</a>
+                <a href="found.html">Found Items</a>
+                <a href="matches.html">Matches</a>
+                <a href="chat.html">Community</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="greeting-block">
+                <p class="eyebrow">Secure Hand-off</p>
+                <h1>Secure QR Verification</h1>
+                <p class="subtext">Verify the item handover securely before completing the return.</p>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="notification" aria-label="Notifications">3</button>
+                <div class="profile-pill">
+                    <img src="https://i.pravatar.cc/80" alt="Profile" />
+                    <span>Meghana</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="page-shell">
+            <section class="panel meeting-card">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Meeting Details</p>
+                        <h2>Hand-off Summary</h2>
+                    </div>
+                    <span class="status-pill pending">Pending Review</span>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="label">Finder</span>
+                        <strong>Rahul Kumar</strong>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Owner</span>
+                        <strong>Meghana Rao</strong>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Meeting Location</span>
+                        <strong>Library Entrance</strong>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Meeting Time</span>
+                        <strong>6:30 PM Today</strong>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Status</span>
+                        <strong id="statusText">Waiting for QR Scan...</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel qr-card">
+                <div class="qr-head">
+                    <div>
+                        <p class="eyebrow">Secure QR Code</p>
+                        <h2>Verification Code</h2>
+                    </div>
+                    <div class="timer-pill">
+                        <span>⏱</span>
+                        <strong id="countdown">05:00</strong>
+                    </div>
+                </div>
+
+                <div class="qr-stage" id="qrStage">
+                    <div class="qr-wrapper" id="qrWrapper">
+                        <svg viewBox="0 0 220 220" class="qr-svg" aria-label="QR verification code">
+                            <rect x="16" y="16" width="70" height="70" rx="8" fill="#fff" />
+                            <rect x="28" y="28" width="46" height="46" rx="4" fill="#0f172a" />
+                            <rect x="134" y="16" width="70" height="70" rx="8" fill="#fff" />
+                            <rect x="146" y="28" width="46" height="46" rx="4" fill="#0f172a" />
+                            <rect x="16" y="134" width="70" height="70" rx="8" fill="#fff" />
+                            <rect x="28" y="146" width="46" height="46" rx="4" fill="#0f172a" />
+                            <rect x="52" y="52" width="14" height="14" fill="#fff" />
+                            <rect x="160" y="52" width="14" height="14" fill="#fff" />
+                            <rect x="52" y="160" width="14" height="14" fill="#fff" />
+                            <rect x="92" y="44" width="10" height="10" fill="#fff" />
+                            <rect x="118" y="44" width="10" height="10" fill="#fff" />
+                            <rect x="92" y="70" width="10" height="10" fill="#fff" />
+                            <rect x="118" y="70" width="10" height="10" fill="#fff" />
+                            <rect x="92" y="96" width="10" height="10" fill="#fff" />
+                            <rect x="106" y="96" width="10" height="10" fill="#fff" />
+                            <rect x="118" y="96" width="10" height="10" fill="#fff" />
+                            <rect x="92" y="122" width="10" height="10" fill="#fff" />
+                            <rect x="118" y="122" width="10" height="10" fill="#fff" />
+                            <rect x="92" y="148" width="10" height="10" fill="#fff" />
+                            <rect x="106" y="148" width="10" height="10" fill="#fff" />
+                            <rect x="118" y="148" width="10" height="10" fill="#fff" />
+                            <rect x="92" y="174" width="10" height="10" fill="#fff" />
+                            <rect x="118" y="174" width="10" height="10" fill="#fff" />
+                            <rect x="92" y="200" width="10" height="10" fill="#fff" />
+                            <rect x="106" y="200" width="10" height="10" fill="#fff" />
+                            <rect x="118" y="200" width="10" height="10" fill="#fff" />
+                        </svg>
+                    </div>
+                </div>
+
+                <p class="qr-caption">Ask the finder to scan this QR code.</p>
+
+                <div class="action-row">
+                    <button class="btn btn-primary" id="refreshQr">Refresh QR</button>
+                    <button class="btn btn-secondary" id="cancelVerification">Cancel Verification</button>
+                </div>
+            </section>
+
+            <section class="panel tips-card">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Safety Tips</p>
+                        <h2>Stay Secure During Handover</h2>
+                    </div>
+                </div>
+
+                <ul class="tips-list">
+                    <li>Meet in a public place</li>
+                    <li>Verify the item before handing it over</li>
+                    <li>Never share OTP or passwords</li>
+                    <li>Complete verification only after receiving the item</li>
+                </ul>
+            </section>
+
+            <section class="panel status-card">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Verification Status</p>
+                        <h2>Live Progress</h2>
+                    </div>
+                    <button class="btn btn-ghost" id="demoVerify">Demo Scan</button>
+                </div>
+
+                <div class="status-box" id="statusBox">
+                    <div class="status-icon">⏳</div>
+                    <div>
+                        <h3 id="statusHeadline">Waiting for QR Scan...</h3>
+                        <p id="statusTextSecondary">The verification will complete once the finder scans the code.</p>
+                    </div>
+                </div>
+
+                <div class="footer-actions">
+                    <a href="chat.html" class="btn btn-secondary">Back to Chat</a>
+                    <a href="review.html" class="btn btn-primary" id="completeReturn">Complete Return</a>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="successModal" aria-hidden="true">
+        <div class="modal-card">
+            <div class="success-ring">
+                <span>✓</span>
+            </div>
+            <h3>Verification Successful</h3>
+            <p>The item handover has been securely verified and recorded.</p>
+            <div class="modal-actions">
+                <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+                <a href="chat.html" class="btn btn-secondary">Back to Chat</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/qr-verification.js"></script>
+</body>
+</html>

@@ -30,6 +30,8 @@ if (signupForm) {
 
         console.log("Signup submitted!");
 
+        window.location.href = "dashboard.html";
+
     });
 
 }

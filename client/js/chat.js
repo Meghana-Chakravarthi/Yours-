@@ -117,6 +117,7 @@ contacts.forEach((contact) => {
 quickButtons.forEach((button) => {
     button.addEventListener('click', () => {
         const action = button.dataset.action;
+        const targetPage = button.dataset.link;
         const actionMessages = {
             meeting: 'Suggested meetup time: 6:30 PM at the library entrance.',
             photo: 'Item photo shared successfully for review.',
@@ -131,6 +132,12 @@ quickButtons.forEach((button) => {
         });
 
         renderConversation(activeContact);
+
+        if (targetPage) {
+            setTimeout(() => {
+                window.location.href = targetPage;
+            }, 500);
+        }
     });
 });
 

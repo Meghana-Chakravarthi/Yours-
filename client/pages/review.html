@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review | Yours?</title>
+    <link rel="stylesheet" href="../css/review.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div>
+            <div class="logo">yours<span>?</span></div>
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="lost.html">Lost Items</a>
+                <a href="found.html">Found Items</a>
+                <a href="matches.html">Matches</a>
+                <a href="chat.html">Community</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Recovery Complete</p>
+                <h1>Share Your Experience</h1>
+                <p class="subtext">Help make the community safer and more trustworthy for everyone.</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="notification" aria-label="Notifications">1</button>
+                <div class="profile-pill">
+                    <img src="https://i.pravatar.cc/80" alt="Profile" />
+                    <span>Meghana</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="review-shell">
+            <section class="panel summary-card">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Successful Recovery</p>
+                        <h2>Item Returned Safely</h2>
+                    </div>
+                    <span class="status-pill">Completed</span>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-badge">Recovered</div>
+                    <h3>Black Laptop Sleeve</h3>
+                    <p>Recovered at the library entrance and verified through secure QR handoff.</p>
+                </div>
+
+                <div class="people-grid">
+                    <div class="person-card">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="Finder" />
+                        <div>
+                            <span class="label">Finder</span>
+                            <strong>Rahul Kumar</strong>
+                            <p>Trusted helper</p>
+                        </div>
+                    </div>
+                    <div class="person-card">
+                        <img src="https://i.pravatar.cc/100?img=32" alt="Owner" />
+                        <div>
+                            <span class="label">Owner</span>
+                            <strong>Meghana Rao</strong>
+                            <p>Item returned</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel form-card">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Review</p>
+                        <h2>How was the handoff?</h2>
+                    </div>
+                </div>
+
+                <div class="rating-section">
+                    <p class="label">Rate the experience</p>
+                    <div class="stars" id="stars" aria-label="Five-star rating">
+                        <button class="star" data-value="1">★</button>
+                        <button class="star" data-value="2">★</button>
+                        <button class="star" data-value="3">★</button>
+                        <button class="star" data-value="4">★</button>
+                        <button class="star" data-value="5">★</button>
+                    </div>
+                </div>
+
+                <label class="field-label" for="reviewText">Share a quick note</label>
+                <textarea id="reviewText" placeholder="Tell us how the meetup went and what made the experience smooth or safe..."></textarea>
+
+                <div class="actions-row">
+                    <button class="btn btn-secondary" id="skipReview">Skip</button>
+                    <button class="btn btn-primary" id="submitReview">Submit Review</button>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div class="success-state" id="successState" aria-hidden="true">
+        <div class="success-card">
+            <div class="success-icon">❤️</div>
+            <h3>Thank you for making the community safer ❤️</h3>
+            <p>Your review helps keep the Yours? community trusted and supportive.</p>
+            <a href="dashboard.html" class="btn btn-primary">Back to Dashboard</a>
+        </div>
+    </div>
+
+    <script src="../js/review.js"></script>
+</body>
+</html>
