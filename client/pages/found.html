@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Found Item | yours?</title>
+    <link rel="stylesheet" href="../css/found.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div>
+            <div class="logo">yours<span>?</span></div>
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="lost.html">Lost Items</a>
+                <a href="#" class="active">Found Items</a>
+                <a href="matches.html">Matches</a>
+                <a href="chat.html">Community</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">New Report</p>
+                <h1>Report Found Item</h1>
+                <p class="subtext">Help return an item to the right owner.</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="notification" aria-label="Notifications">
+                    <span>2</span>
+                </button>
+                <div class="profile">
+                    <img src="https://i.pravatar.cc/100" alt="Profile" />
+                </div>
+            </div>
+        </header>
+
+        <section class="page-card">
+            <h2 class="page-title">Report Found Item</h2>
+            <p class="page-subtitle">Fill in the details so the owner can identify it quickly.</p>
+
+            <form id="foundForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="itemName">Item Name</label>
+                        <input id="itemName" name="itemName" type="text" placeholder="e.g. Wireless Earbuds" />
+                        <p class="error" data-error="itemName"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" name="category">
+                            <option value="">Select category</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Documents">Documents</option>
+                            <option value="Wearables">Wearables</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <p class="error" data-error="category"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brand">Brand</label>
+                        <input id="brand" name="brand" type="text" placeholder="Optional" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <select id="color" name="color">
+                            <option value="">Select color</option>
+                            <option value="Black">Black</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Red">Red</option>
+                            <option value="Silver">Silver</option>
+                            <option value="White">White</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" placeholder="Describe the item, unique marks, or identifying details."></textarea>
+                        <p class="error" data-error="description"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateFound">Date Found</label>
+                        <input id="dateFound" name="dateFound" type="date" />
+                        <p class="error" data-error="dateFound"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeFound">Time Found</label>
+                        <input id="timeFound" name="timeFound" type="time" />
+                        <p class="error" data-error="timeFound"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Exact Location</label>
+                        <input id="location" name="location" type="text" placeholder="Where did you find it?" />
+                        <p class="error" data-error="location"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="landmark">Landmark</label>
+                        <input id="landmark" name="landmark" type="text" placeholder="Nearby landmark" />
+                    </div>
+
+                    <div class="form-group full">
+                        <label>Upload Photos</label>
+                        <div id="uploadBox" class="upload-box">
+                            <input id="imageInput" type="file" accept="image/*" multiple />
+                            <p><strong>Click to upload</strong> or drag and drop images here.</p>
+                        </div>
+                        <div id="previewList" class="preview-list"></div>
+                        <p class="error" data-error="images"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="condition">Item Condition</label>
+                        <select id="condition" name="condition">
+                            <option value="">Select condition</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Damaged">Damaged</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full">
+                        <label>Where is the Item Now?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="itemLocation" value="With Me" /> With Me</label>
+                            <label><input type="radio" name="itemLocation" value="Submitted to Security" /> Submitted to Security</label>
+                            <label><input type="radio" name="itemLocation" value="Submitted to Lost & Found Office" /> Submitted to Lost & Found Office</label>
+                            <label><input type="radio" name="itemLocation" value="Other" /> Other</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full">
+                        <label>Contact Preference</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="contact" value="Chat Only" /> Chat Only</label>
+                            <label><input type="radio" name="contact" value="Phone" /> Phone</label>
+                            <label><input type="radio" name="contact" value="Email" /> Email</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full">
+                        <p class="note">Provide the most accurate location so the owner can identify the item.</p>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Report Found Item</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div id="successModal" class="modal-backdrop" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true">
+            <h3>Found Item Reported Successfully</h3>
+            <p>Thank you for helping someone recover their belongings.</p>
+            <div class="modal-actions">
+                <button id="closeModal" class="btn btn-secondary" type="button">Close</button>
+                <button id="goDashboard" class="btn btn-primary" type="button">Return to Dashboard</button>
+                <button id="reportAnother" class="btn btn-secondary" type="button">Report Another Item</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/found.js"></script>
+</body>
+</html>

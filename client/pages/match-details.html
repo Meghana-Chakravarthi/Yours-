@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Match Details | yours?</title>
+    <link rel="stylesheet" href="../css/match-details.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div>
+            <div class="logo">yours<span>?</span></div>
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="lost.html">Lost Items</a>
+                <a href="found.html">Found Items</a>
+                <a href="matches.html" class="active">Matches</a>
+                <a href="chat.html">Community</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Match Review</p>
+                <h1>CMF Buds</h1>
+                <p class="subtext">High confidence match between the reported and found item.</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="notification" aria-label="Notifications">
+                    <span>1</span>
+                </button>
+                <div class="profile">
+                    <img src="https://i.pravatar.cc/100" alt="Profile" />
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-card">
+            <div class="hero-copy">
+                <h2>CMF Buds</h2>
+                <p class="hero-score">95% Match Confidence</p>
+                <p class="hero-status">High Confidence Match</p>
+            </div>
+            <div class="progress-ring">
+                <svg viewBox="0 0 120 120" class="ring">
+                    <circle class="ring-bg" cx="60" cy="60" r="48"></circle>
+                    <circle class="ring-progress" cx="60" cy="60" r="48"></circle>
+                </svg>
+                <div class="ring-inner">95%</div>
+            </div>
+        </section>
+
+        <section class="compare-grid">
+            <article class="panel card-left">
+                <h3>Lost Item</h3>
+                <div class="item-image"></div>
+                <div class="details-list">
+                    <p><strong>Item Name:</strong> CMF Buds</p>
+                    <p><strong>Brand:</strong> CMF</p>
+                    <p><strong>Category:</strong> Electronics</p>
+                    <p><strong>Color:</strong> White</p>
+                    <p><strong>Description:</strong> Wireless earbuds with a small scratch near the case.</p>
+                    <p><strong>Lost Date:</strong> 3 Jul</p>
+                    <p><strong>Last Seen:</strong> Library Entrance</p>
+                </div>
+            </article>
+
+            <article class="panel center-panel">
+                <h3>Comparison Score</h3>
+                <div class="comparison-badges">
+                    <div class="badge"><span>Brand</span><strong>✔</strong></div>
+                    <div class="badge"><span>Color</span><strong>✔</strong></div>
+                    <div class="badge"><span>Location</span><strong>✔</strong></div>
+                    <div class="badge"><span>Category</span><strong>✔</strong></div>
+                    <div class="badge"><span>Date</span><strong>✔</strong></div>
+                    <div class="badge"><span>Confidence</span><strong>95%</strong></div>
+                </div>
+
+                <div class="timeline">
+                    <div class="step active">Lost</div>
+                    <div class="step active">Reported</div>
+                    <div class="step active">Matched</div>
+                    <div class="step">Waiting for Acceptance</div>
+                </div>
+            </article>
+
+            <article class="panel card-right">
+                <h3>Found Item</h3>
+                <div class="item-image"></div>
+                <div class="details-list">
+                    <p><strong>Item Name:</strong> White Earbuds Case</p>
+                    <p><strong>Brand:</strong> CMF</p>
+                    <p><strong>Category:</strong> Electronics</p>
+                    <p><strong>Color:</strong> White</p>
+                    <p><strong>Description:</strong> Found near the cafeteria counter with charging case.</p>
+                    <p><strong>Found Date:</strong> 3 Jul</p>
+                    <p><strong>Current Location:</strong> Security Desk</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="actions-row">
+            <button class="btn btn-primary">Accept Match</button>
+            <button class="btn btn-secondary">Reject Match</button>
+            <button class="btn btn-secondary">Chat with Finder</button>
+        </section>
+
+        <section class="tips-card">
+            <h3>Safety Tips</h3>
+            <ul>
+                <li>Meet in a public place.</li>
+                <li>Verify using QR.</li>
+                <li>Never share OTP.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="../js/match-details.js"></script>
+</body>
+</html>

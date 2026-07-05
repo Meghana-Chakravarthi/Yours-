@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Possible Matches | yours?</title>
+    <link rel="stylesheet" href="../css/matches.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div>
+            <div class="logo">yours<span>?</span></div>
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="lost.html">Lost Items</a>
+                <a href="found.html">Found Items</a>
+                <a href="#" class="active">Matches</a>
+                <a href="chat.html">Community</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Connections</p>
+                <h1>Possible Matches</h1>
+                <p class="subtext">Review likely item reunions with confidence.</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="notification" aria-label="Notifications">
+                    <span>4</span>
+                </button>
+                <div class="profile">
+                    <img src="https://i.pravatar.cc/100" alt="Profile" />
+                </div>
+            </div>
+        </header>
+
+        <section class="controls">
+            <label class="control">
+                <input id="searchInput" type="text" placeholder="Search items" />
+            </label>
+            <label class="control">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Documents">Documents</option>
+                </select>
+            </label>
+            <label class="control">
+                <select id="matchFilter">
+                    <option value="">All Matches</option>
+                    <option value="high">High Confidence</option>
+                    <option value="mid">Medium Confidence</option>
+                    <option value="low">Lower Confidence</option>
+                </select>
+            </label>
+        </section>
+
+        <section class="match-card" data-category="Electronics" data-score="95">
+            <div class="item-block">
+                <div class="item-image"></div>
+                <div class="item-details">
+                    <h3>Lost Item</h3>
+                    <p class="meta">AirPods Pro<br />Category: Electronics<br />Color: White<br />Date Lost: 3 Jul<br />Last Seen: Library Entrance</p>
+                </div>
+            </div>
+
+            <div class="confidence">
+                <div class="score">95%</div>
+                <div class="progress"><span data-width="95"></span></div>
+                <p>High Confidence Match</p>
+            </div>
+
+            <div>
+                <div class="item-block">
+                    <div class="item-image"></div>
+                    <div class="item-details">
+                        <h3>Found Item</h3>
+                        <p class="meta">White Earbuds Case<br />Category: Electronics<br />Color: White<br />Date Found: 3 Jul<br />Found Location: Cafeteria</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="action-btn primary">View Details</button>
+                    <button class="action-btn secondary">Chat with Finder</button>
+                    <button class="action-btn danger">Reject Match</button>
+                </div>
+                <div class="common-tags">
+                    <span>Same Brand</span>
+                    <span>Same Color</span>
+                    <span>Similar Location</span>
+                    <span>Similar Date</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="match-card" data-category="Accessories" data-score="88">
+            <div class="item-block">
+                <div class="item-image"></div>
+                <div class="item-details">
+                    <h3>Lost Item</h3>
+                    <p class="meta">Black Wallet<br />Category: Accessories<br />Color: Black<br />Date Lost: 2 Jul<br />Last Seen: Station Road</p>
+                </div>
+            </div>
+
+            <div class="confidence">
+                <div class="score">88%</div>
+                <div class="progress"><span data-width="88"></span></div>
+                <p>Strong Match</p>
+            </div>
+
+            <div>
+                <div class="item-block">
+                    <div class="item-image"></div>
+                    <div class="item-details">
+                        <h3>Found Item</h3>
+                        <p class="meta">Leather Wallet<br />Category: Accessories<br />Color: Black<br />Date Found: 2 Jul<br />Found Location: Bus Stop</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="action-btn primary">View Details</button>
+                    <button class="action-btn secondary">Chat with Finder</button>
+                    <button class="action-btn danger">Reject Match</button>
+                </div>
+                <div class="common-tags">
+                    <span>Same Brand</span>
+                    <span>Same Color</span>
+                    <span>Similar Location</span>
+                    <span>Similar Date</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/matches.js"></script>
+</body>
+</html>
