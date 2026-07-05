@@ -16,9 +16,6 @@ const path = require("path");
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, "../client")));
 
-// using routes
-app.use("/api/auth", authRoutes);
-
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/index.html"));
 });
