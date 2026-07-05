@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Lost Item | yours?</title>
+    <link rel="stylesheet" href="../css/lost.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div>
+            <div class="logo">yours<span>?</span></div>
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="#" class="active">Lost Items</a>
+                <a href="found.html">Found Items</a>
+                <a href="matches.html">Matches</a>
+                <a href="chat.html">Community</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">New Report</p>
+                <h1>Report Lost Item</h1>
+                <p class="subtext">Share details and help bring it back faster.</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="notification" aria-label="Notifications">
+                    <span>2</span>
+                </button>
+                <div class="profile">
+                    <img src="https://i.pravatar.cc/100" alt="Profile" />
+                </div>
+            </div>
+        </header>
+
+        <section class="page-card">
+            <h2 class="page-title">Report Lost Item</h2>
+            <p class="page-subtitle">Fill in the details below to start a smart recovery search.</p>
+
+            <form id="lostForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="itemName">Item Name</label>
+                        <input id="itemName" name="itemName" type="text" placeholder="e.g. Black backpack" />
+                        <p class="error" data-error="itemName"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" name="category">
+                            <option value="">Select category</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Documents">Documents</option>
+                            <option value="Wearables">Wearables</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <p class="error" data-error="category"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brand">Brand</label>
+                        <input id="brand" name="brand" type="text" placeholder="Optional" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <select id="color" name="color">
+                            <option value="">Select color</option>
+                            <option value="Black">Black</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Red">Red</option>
+                            <option value="Silver">Silver</option>
+                            <option value="White">White</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" placeholder="Add a short description with unique identifiers."></textarea>
+                        <p class="error" data-error="description"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input id="date" name="date" type="date" />
+                        <p class="error" data-error="date"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input id="time" name="time" type="time" />
+                        <p class="error" data-error="time"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input id="location" name="location" type="text" placeholder="Where did you last see it?" />
+                        <p class="error" data-error="location"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="landmark">Landmark</label>
+                        <input id="landmark" name="landmark" type="text" placeholder="Nearby landmark" />
+                    </div>
+
+                    <div class="form-group full">
+                        <label>Upload Images</label>
+                        <div id="uploadBox" class="upload-box">
+                            <input id="imageInput" type="file" accept="image/*" multiple />
+                            <p><strong>Click to upload</strong> or drag and drop images here.</p>
+                        </div>
+                        <div id="previewList" class="preview-list"></div>
+                        <p class="error" data-error="images"></p>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="reward">Reward Amount (₹)</label>
+                        <input id="reward" name="reward" type="number" min="0" placeholder="Optional" />
+                        <p class="reward-note">This reward is optional.</p>
+                    </div>
+
+                    <div class="form-group full">
+                        <label>Contact Preference</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="contact" value="Chat only" /> Chat only</label>
+                            <label><input type="radio" name="contact" value="Phone" /> Phone</label>
+                            <label><input type="radio" name="contact" value="Email" /> Email</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Report Lost Item</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div id="successModal" class="modal-backdrop" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true">
+            <h3>Lost Item Reported Successfully</h3>
+            <p>We'll immediately start searching for possible matches. You'll be notified when someone reports a similar item.</p>
+            <div class="modal-actions">
+                <button id="closeModal" class="btn btn-secondary" type="button">Close</button>
+                <button id="goDashboard" class="btn btn-primary" type="button">Return to Dashboard</button>
+                <button id="reportAnother" class="btn btn-secondary" type="button">Report Another Item</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/lost.js"></script>
+</body>
+</html>
