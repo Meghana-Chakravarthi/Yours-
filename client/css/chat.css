@@ -284,6 +284,14 @@ body {
     font-size: 0.74rem;
 }
 
+.message-status {
+    display: block;
+    margin-top: 4px;
+    color: rgba(255,255,255,0.76);
+    font-size: 0.72rem;
+    text-align: right;
+}
+
 .typing {
     display: flex;
     align-items: center;

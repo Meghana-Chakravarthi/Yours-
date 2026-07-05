@@ -6,6 +6,8 @@ const chatName = document.getElementById('chatName');
 const chatStatus = document.getElementById('chatStatus');
 const contacts = Array.from(document.querySelectorAll('.conversation-item'));
 const quickButtons = Array.from(document.querySelectorAll('.quick-btn'));
+const emojiButton = document.getElementById('emojiButton');
+const attachButton = document.getElementById('attachButton');
 
 const conversations = {
     rahul: {
@@ -57,9 +59,31 @@ function addMessage(text, sender = 'sender', timeLabel = null, isSystem = false)
     time.textContent = timeLabel || new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
 
     bubble.appendChild(time);
+
+    if (sender === 'sender' && !isSystem) {
+        const status = document.createElement('span');
+        status.className = 'message-status';
+        status.textContent = '✓ Delivered';
+        bubble.appendChild(status);
+    }
+
     row.appendChild(bubble);
     messages.insertBefore(row, typingIndicator);
     scrollToBottom();
+}
+
+function pushMessage(text, sender, isSystem = false) {
+    const timeLabel = new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    conversations[activeContact].messages.push({
+        text,
+        sender,
+        time: timeLabel
+    });
+
+    renderConversation(activeContact);
+    if (sender !== 'system') {
+        input.focus();
+    }
 }
 
 function renderConversation(contactKey) {
@@ -141,36 +165,38 @@ quickButtons.forEach((button) => {
     });
 });
 
+if (emojiButton) {
+    emojiButton.addEventListener('click', () => {
+        input.value += ' 😊';
+        input.focus();
+    });
+}
+
+if (attachButton) {
+    attachButton.addEventListener('click', () => {
+        input.value += ' 📎';
+        input.focus();
+    });
+}
+
 if (sendButton && input) {
     sendButton.addEventListener('click', () => {
         const text = input.value.trim();
         if (!text) return;
 
-        conversations[activeContact].messages.push({
-            text,
-            sender: 'sender',
-            time: new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
-        });
-
-        renderConversation(activeContact);
         input.value = '';
+        pushMessage(text, 'sender');
         showTyping();
+
+        const reply = activeContact === 'rahul'
+            ? 'Sounds good. I can meet you near the library entrance.'
+            : activeContact === 'priya'
+                ? 'I’ll check the cafeteria and update you shortly.'
+                : 'Thanks! I’ll keep an eye out for it.';
 
         setTimeout(() => {
             hideTyping();
-            const reply = activeContact === 'rahul'
-                ? 'Sounds good. I can meet you near the library entrance.'
-                : activeContact === 'priya'
-                    ? 'I’ll check the cafeteria and update you shortly.'
-                    : 'Thanks! I’ll keep an eye out for it.';
-
-            conversations[activeContact].messages.push({
-                text: reply,
-                sender: 'receiver',
-                time: new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
-            });
-
-            renderConversation(activeContact);
+            pushMessage(reply, 'receiver');
         }, 900);
     });
 
@@ -179,6 +205,10 @@ if (sendButton && input) {
             event.preventDefault();
             sendButton.click();
         }
+    });
+
+    input.addEventListener('focus', () => {
+        input.placeholder = 'Type a message';
     });
 }
 
