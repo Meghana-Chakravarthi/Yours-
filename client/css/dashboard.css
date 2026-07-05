@@ -260,7 +260,81 @@ body{
     transform:translateY(-4px);
 
 }
+.topbar{
 
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    margin-bottom:40px;
+
+}
+.search-box{
+
+    flex:1;
+
+    max-width:450px;
+
+}
+.search-box input{
+
+    width:100%;
+
+    padding:14px 20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:#1E293B;
+
+    color:white;
+
+    font-size:15px;
+
+}
+.notification{
+
+    position:relative;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+}
+.notification span{
+
+    position:absolute;
+
+    top:-8px;
+
+    right:-8px;
+
+    width:18px;
+
+    height:18px;
+
+    background:#EF4444;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:11px;
+
+}
 .stat-card h2{
 
     font-size:1.8rem;
