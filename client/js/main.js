@@ -8,6 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                if (entry.target.matches('.community-heroes')) {
+                    const progressBars = entry.target.querySelectorAll('.progress-bar');
+                    progressBars.forEach(bar => {
+                        const fill = bar.querySelector('.progress-bar-fill');
+                        const value = Number(bar.dataset.value || 0);
+                        if (fill) {
+                            fill.style.width = `${value}%`;
+                        }
+                    });
+                }
                 observer.unobserve(entry.target);
             }
         });
@@ -23,6 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add('visible');
         }
     });
+
+    const heroHeadline = document.querySelector('.hero-heading');
+    if (heroHeadline) {
+        const fullText = heroHeadline.textContent.trim();
+        heroHeadline.textContent = '';
+        const typingSpan = document.createElement('span');
+        typingSpan.className = 'typing-line';
+        typingSpan.textContent = fullText;
+        heroHeadline.appendChild(typingSpan);
+    }
 
     if (revealObserver) {
         trustCards.forEach(card => revealObserver.observe(card));
