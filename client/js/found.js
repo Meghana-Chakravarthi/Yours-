@@ -86,16 +86,99 @@ function validateForm() {
 }
 
 if (form) {
-    form.addEventListener('submit', (event) => {
+
+    form.addEventListener("submit", (event) => {
+
         event.preventDefault();
 
         if (!validateForm()) return;
 
+        const foundItem = {
+
+            id: Date.now(),
+
+            itemName: document.getElementById("itemName").value,
+
+            category: document.getElementById("category").value,
+
+            brand: document.getElementById("brand").value,
+
+            color: document.getElementById("color").value,
+
+            description: document.getElementById("description").value,
+
+            dateFound: document.getElementById("dateFound").value,
+
+            timeFound: document.getElementById("timeFound").value,
+
+            location: document.getElementById("location").value,
+
+            landmark: document.getElementById("landmark").value,
+
+            condition: document.getElementById("condition").value,
+
+            status: "Available"
+
+        };
+
+        let foundItems =
+            JSON.parse(localStorage.getItem("foundItems")) || [];
+
+        foundItems.push(foundItem);
+
+        localStorage.setItem(
+            "foundItems",
+            JSON.stringify(foundItems)
+        );
+
+        // Demo Match
+
+        let matches =
+            JSON.parse(localStorage.getItem("matches")) || [];
+
+        matches.push({
+
+            id: Date.now(),
+
+            itemName: foundItem.itemName,
+
+            confidence: 95,
+
+            location: foundItem.location
+
+        });
+
+        localStorage.setItem(
+            "matches",
+            JSON.stringify(matches)
+        );
+
+        let currentUser =
+            JSON.parse(localStorage.getItem("currentUser"));
+
+        if(currentUser){
+
+            currentUser.karma += 20;
+
+            currentUser.recoveries += 1;
+
+            localStorage.setItem(
+                "currentUser",
+                JSON.stringify(currentUser)
+            );
+
+        }
+
         openModal();
+
         form.reset();
+
         selectedFiles = [];
+
         renderPreview();
+
     });
+
 }
 
 if (uploadBox && fileInput) {
