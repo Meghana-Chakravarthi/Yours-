@@ -25,29 +25,27 @@
    BODY
 =========================== */
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     background: var(--background);
     color: var(--text);
 
-    min-height:100vh;
+    min-height: 100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    overflow-x: hidden;
+    overflow-y: auto;
 
-    overflow:hidden;
-
-    position:relative;
+    position: relative;
 }
 /* ===========================
    BACKGROUND
 =========================== */
 
 .background{
-    position:absolute;
-    inset:0;
-    overflow:hidden;
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
 }
 
 .circle{
@@ -108,24 +106,30 @@ body{
         transform:translateY(-40px);
     }
 }
-.container{
-    position:relative;
-    z-index:10;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+.container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 60px 20px;
+
+    position: relative;
+    z-index: 10;
 }
 .login-card{
-    width:420px;
+    width:100%;
+    max-width:420px;
+
     background:var(--card);
     backdrop-filter:blur(25px);
     border:1px solid var(--border);
     border-radius:28px;
     padding:45px;
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.35);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
 }
 .logo{
     font-size:2rem;
