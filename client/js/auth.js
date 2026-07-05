@@ -10,6 +10,8 @@ if (loginForm) {
 
         console.log("Login submitted!");
 
+        window.location.href = "dashboard.html";
+
     });
 
 }
