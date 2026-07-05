@@ -93,10 +93,116 @@ if (form) {
             return;
         }
 
-        openModal();
-        form.reset();
-        selectedFiles = [];
-        renderPreview();
+        // openModal();
+        // form.reset();
+        // selectedFiles = [];
+        // renderPreview();
+        // Create Lost Item Object
+const lostItem = {
+
+    id: Date.now(),
+
+    itemName: document.getElementById("itemName").value,
+
+    category: document.getElementById("category").value,
+
+    brand: document.getElementById("brand").value,
+
+    color: document.getElementById("color").value,
+
+    description: document.getElementById("description").value,
+
+    date: document.getElementById("date").value,
+
+    time: document.getElementById("time").value,
+
+    location: document.getElementById("location").value,
+
+    landmark: document.getElementById("landmark").value,
+
+    reward: document.getElementById("reward").value,
+
+    status: "Searching"
+
+};
+
+
+// Save Lost Items
+const lostItems =
+    JSON.parse(localStorage.getItem("lostItems")) || [];
+
+lostItems.push(lostItem);
+
+localStorage.setItem(
+    "lostItems",
+    JSON.stringify(lostItems)
+);
+
+// Update current user's karma
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if(currentUser){
+
+    currentUser.karma += 10;
+
+    localStorage.setItem(
+        "currentUser",
+        JSON.stringify(currentUser)
+    );
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    users = users.map(user => {
+
+        if(user.email === currentUser.email){
+
+            return currentUser;
+
+        }
+
+        return user;
+
+    });
+
+    localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+    );
+
+}
+
+// --------- DEMO MATCH ----------
+
+let matches =
+    JSON.parse(localStorage.getItem("matches")) || [];
+
+matches.push({
+
+    id: Date.now(),
+
+    itemName: lostItem.itemName,
+
+    confidence: 95,
+
+    location: lostItem.location
+
+});
+
+localStorage.setItem(
+    "matches",
+    JSON.stringify(matches)
+);
+
+
+// Show Success
+
+openModal();
+
+form.reset();
+
+selectedFiles = [];
+
+renderPreview();
     });
 }
 
@@ -132,7 +238,18 @@ if (uploadBox && fileInput) {
 }
 
 if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-if (dashboardBtn) dashboardBtn.addEventListener('click', () => window.location.href = 'dashboard.html');
+// if (dashboardBtn) dashboardBtn.addEventListener('click', () => window.location.href = 'dashboard.html');
+
+if (dashboardBtn){
+
+    dashboardBtn.addEventListener("click",()=>{
+
+        window.location.href="dashboard.html";
+
+    });
+
+}
+
 if (anotherBtn) anotherBtn.addEventListener('click', () => { closeModal(); form.reset(); selectedFiles = []; renderPreview(); });
 
 renderPreview();
